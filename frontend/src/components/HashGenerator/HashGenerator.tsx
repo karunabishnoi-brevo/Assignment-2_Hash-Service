@@ -2,8 +2,6 @@ import { useState, useCallback, type FormEvent, type ChangeEvent } from 'react'
 import { generateHash, type HashResponse } from '../../services/api'
 import './HashGenerator.css'
 
-const ALPHANUMERIC_REGEX = /^[a-zA-Z0-9]*$/
-
 function HashGenerator() {
   const [input, setInput] = useState('')
   const [result, setResult] = useState<HashResponse | null>(null)
@@ -11,11 +9,8 @@ function HashGenerator() {
   const [error, setError] = useState('')
 
   const handleInputChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    if (ALPHANUMERIC_REGEX.test(value)) {
-      setInput(value)
-      setError('')
-    }
+    setInput(e.target.value)
+    setError('')
   }, [])
 
   const handleSubmit = useCallback(
