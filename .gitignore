@@ -1,5 +1,11 @@
-# compiled binaries
-hashservice
-
 # macOS
 .DS_Store
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend binaries
+backend/server
+backend/*.exe
+backend/*.out
