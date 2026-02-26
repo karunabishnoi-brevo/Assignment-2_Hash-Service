@@ -54,7 +54,7 @@ func (h *HashHandler) HandleHash(w http.ResponseWriter, r *http.Request) {
 
 	if !alphanumericRegex.MatchString(req.Input) {
 		writeJSON(w, http.StatusBadRequest, model.ErrorResponse{
-			Error: "input must be alphanumeric",
+			Error: "invalid input",
 		})
 		return
 	}
